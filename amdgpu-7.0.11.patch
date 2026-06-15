@@ -1,3 +1,25 @@
+diff -Nuarp drm-7.0.11.orig/amd/amdgpu/amdgpu_amdkfd_gpuvm.c drm-7.0.11/amd/amdgpu/amdgpu_amdkfd_gpuvm.c
+--- drm-7.0.11.orig/amd/amdgpu/amdgpu_amdkfd_gpuvm.c	2026-06-02 00:54:55.000000000 +0900
++++ drm-7.0.11/amd/amdgpu/amdgpu_amdkfd_gpuvm.c	2026-06-15 21:46:18.812507049 +0900
+@@ -963,12 +963,16 @@ static int kfd_mem_attach(struct amdgpu_
+ 		drm_exec_until_all_locked(&exec) {
+ 			ret = amdgpu_vm_lock_pd(vm, &exec, 0);
+ 			drm_exec_retry_on_contention(&exec);
+-			if (unlikely(ret))
++			if (unlikely(ret)) {
++				drm_exec_fini(&exec);
+ 				goto unwind;
++			}
+ 			ret = drm_exec_lock_obj(&exec, &bo[i]->tbo.base);
+ 			drm_exec_retry_on_contention(&exec);
+-			if (unlikely(ret))
++			if (unlikely(ret)) {
++				drm_exec_fini(&exec);
+ 				goto unwind;
++			}
+ 		}
+ 
+ 		bo_va = amdgpu_vm_bo_find(vm, bo[i]);
 diff -Nuarp drm-7.0.11.orig/amd/amdgpu/amdgpu_device.c drm-7.0.11/amd/amdgpu/amdgpu_device.c
 --- drm-7.0.11.orig/amd/amdgpu/amdgpu_device.c	2026-06-02 00:54:55.000000000 +0900
 +++ drm-7.0.11/amd/amdgpu/amdgpu_device.c	2026-06-15 12:21:39.368014389 +0900
