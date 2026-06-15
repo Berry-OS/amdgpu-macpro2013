@@ -50,6 +50,12 @@ patch -p1 < /path/to/amdgpu-7.0.11.patch
 
 Then rebuild and reinstall the kernel module.
 
+Kernel options:
+
+```
+radeon.si_support=0 amdgpu.si_support=1 amdgpu.dc=1 amdgpu.dpm=0 amdgpu.audio=0 amdgpu.gpu_recovery=1
+```
+
 ---
 
 ## 🔧 Targeted Hardware

@@ -1,0 +1,243 @@
+ 6月 15 14:57:13 berry kernel: Command line: audit=0 rootwait rw root=PARTUUID=00000000-1994-0205-2002-424552525900 radeon.si_support=0 amdgpu.si_support=1 amdgpu.dc=1 amdgpu.dpm=0 amdgpu.audio=0 amdgpu.gpu_recovery=1 clocksource=tsc nopti noibrs noibpb nospectre_v2 nospec_store_bypass_disable ibt=off
+ 6月 15 14:57:13 berry kernel: Kernel command line: audit=0 rootwait rw root=PARTUUID=00000000-1994-0205-2002-424552525900 radeon.si_support=0 amdgpu.si_support=1 amdgpu.dc=1 amdgpu.dpm=0 amdgpu.audio=0 amdgpu.gpu_recovery=1 clocksource=tsc nopti noibrs noibpb nospectre_v2 nospec_store_bypass_disable ibt=off
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: SI support provided by amdgpu.
+                                Use radeon.si_support=1 amdgpu.si_support=0 to override.
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: enabling device (0006 -> 0007)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: initializing kernel modesetting (TAHITI 0x1002:0x679E 0x106B:0x0126 0x00).
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: register mmio base: 0xA0700000
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: register mmio size: 262144
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 0 <common_v1_0_0> (si_common)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 1 <gmc_v6_0_0> (gmc_v6_0)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 2 <ih_v1_0_0> (si_ih)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 3 <gfx_v6_0_0> (gfx_v6_0)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 4 <sdma_v1_0_0> (si_dma)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 5 <smu_v6_0_0> (si_dpm)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 6 <dce_v6_0_0> (dce_v6_0)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 7 <uvd_v3_1_0> (uvd_v3_1)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: detected ip block number 8 <vce_v1_0_0> (vce_v1_0)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: Fetched VBIOS from VFCT
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] ATOM BIOS: 113-C3861LA-029
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: Found VCE firmware Version: 50.0 Binary ID: 1
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: Trusted Memory Zone (TMZ) feature not supported
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] PCIE gen 3 link speeds already enabled
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: vm size is 256 GB, 2 levels, block size is 10-bit, fragment size is 9-bit
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: VRAM: 3072M 0x000000F400000000 - 0x000000F4BFFFFFFF (3072M used)
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: GART: 1024M 0x0000000000000000 - 0x000000003FFFFFFF
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] Detected VRAM RAM=3072M, BAR=256M
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] RAM width 384bits GDDR5
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0:  3072M of VRAM memory ready
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0:  32148M of GTT memory ready.
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] GART: num cpu pages 262144, num gpu pages 262144
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] PCIE GART of 1024M enabled (table at 0x000000F400000000).
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] AMDGPU Display Connectors
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] Connector 0:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DP-1
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   HPD1
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DDC: 0x1954 0x1954 0x1955 0x1955 0x1956 0x1956 0x1957 0x1957
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   Encoders:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]     DFP1: INTERNAL_UNIPHY1
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] Connector 1:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DP-2
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   HPD2
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DDC: 0x1958 0x1958 0x1959 0x1959 0x195a 0x195a 0x195b 0x195b
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   Encoders:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]     DFP2: INTERNAL_UNIPHY1
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] Connector 2:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DP-3
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   HPD3
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DDC: 0x194c 0x194c 0x194d 0x194d 0x194e 0x194e 0x194f 0x194f
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   Encoders:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]     DFP3: INTERNAL_UNIPHY2
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] Connector 3:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DP-4
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   HPD4
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DDC: 0x1950 0x1950 0x1951 0x1951 0x1952 0x1952 0x1953 0x1953
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   Encoders:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]     DFP4: INTERNAL_UNIPHY2
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] Connector 4:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DP-5
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   HPD5
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DDC: 0x195c 0x195c 0x195d 0x195d 0x195e 0x195e 0x195f 0x195f
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   Encoders:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]     DFP5: INTERNAL_UNIPHY
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] Connector 5:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DP-6
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   HPD6
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   DDC: 0x1960 0x1960 0x1961 0x1961 0x1962 0x1962 0x1963 0x1963
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]   Encoders:
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm]     DFP6: INTERNAL_UNIPHY
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] Found UVD firmware Version: 64.0 Family ID: 13
+ 6月 15 14:57:16 berry kernel: amdgpu 0000:02:00.0: [drm] UVD initialized successfully.
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:02:00.0: VCE initialized successfully.
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:02:00.0: SE 2, SH per SE 2, CU per SH 8, active_cu_number 24
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:02:00.0: Runtime PM not available
+ 6月 15 14:57:17 berry kernel: [drm] Initialized amdgpu 3.64.0 for 0000:02:00.0 on minor 0
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:02:00.0: [drm] Cannot find any crtc or sizes
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: SI support provided by amdgpu.
+                                Use radeon.si_support=1 amdgpu.si_support=0 to override.
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: initializing kernel modesetting (TAHITI 0x1002:0x679E 0x106B:0x0125 0x00).
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: register mmio base: 0xA0600000
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: register mmio size: 262144
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 0 <common_v1_0_0> (si_common)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 1 <gmc_v6_0_0> (gmc_v6_0)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 2 <ih_v1_0_0> (si_ih)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 3 <gfx_v6_0_0> (gfx_v6_0)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 4 <sdma_v1_0_0> (si_dma)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 5 <smu_v6_0_0> (si_dpm)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 6 <dce_v6_0_0> (dce_v6_0)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 7 <uvd_v3_1_0> (uvd_v3_1)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: detected ip block number 8 <vce_v1_0_0> (vce_v1_0)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: Fetched VBIOS from VFCT
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] ATOM BIOS: 113-C3861LB-029
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: Found VCE firmware Version: 50.0 Binary ID: 1
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: Trusted Memory Zone (TMZ) feature not supported
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] PCIE gen 3 link speeds already enabled
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: vm size is 256 GB, 2 levels, block size is 10-bit, fragment size is 9-bit
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: VRAM: 3072M 0x000000F400000000 - 0x000000F4BFFFFFFF (3072M used)
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: GART: 1024M 0x0000000000000000 - 0x000000003FFFFFFF
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] Detected VRAM RAM=3072M, BAR=256M
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] RAM width 384bits GDDR5
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0:  3072M of VRAM memory ready
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0:  32148M of GTT memory ready.
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] GART: num cpu pages 262144, num gpu pages 262144
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] PCIE GART of 1024M enabled (table at 0x000000F400000000).
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] AMDGPU Display Connectors
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] Connector 0:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DP-7
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   HPD1
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DDC: 0x1954 0x1954 0x1955 0x1955 0x1956 0x1956 0x1957 0x1957
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   Encoders:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]     DFP1: INTERNAL_UNIPHY1
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] Connector 1:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DP-8
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   HPD2
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DDC: 0x1958 0x1958 0x1959 0x1959 0x195a 0x195a 0x195b 0x195b
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   Encoders:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]     DFP2: INTERNAL_UNIPHY1
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] Connector 2:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DP-9
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   HPD3
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DDC: 0x194c 0x194c 0x194d 0x194d 0x194e 0x194e 0x194f 0x194f
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   Encoders:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]     DFP3: INTERNAL_UNIPHY2
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] Connector 3:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DP-10
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   HPD4
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DDC: 0x1950 0x1950 0x1951 0x1951 0x1952 0x1952 0x1953 0x1953
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   Encoders:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]     DFP4: INTERNAL_UNIPHY2
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] Connector 4:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DP-11
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   HPD5
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DDC: 0x195c 0x195c 0x195d 0x195d 0x195e 0x195e 0x195f 0x195f
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   Encoders:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]     DFP5: INTERNAL_UNIPHY
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] Connector 5:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DP-12
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   HPD6
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   DDC: 0x1960 0x1960 0x1961 0x1961 0x1962 0x1962 0x1963 0x1963
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]   Encoders:
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm]     DFP6: INTERNAL_UNIPHY
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:06:00.0: [drm] Found UVD firmware Version: 64.0 Family ID: 13
+ 6月 15 14:57:17 berry kernel: amdgpu 0000:02:00.0: [drm] Cannot find any crtc or sizes
+ 6月 15 14:57:18 berry kernel: amdgpu 0000:02:00.0: [drm] Cannot find any crtc or sizes
+ 6月 15 14:57:18 berry kernel: amdgpu 0000:06:00.0: [drm] UVD initialized successfully.
+ 6月 15 14:57:18 berry kernel: amdgpu 0000:06:00.0: VCE initialized successfully.
+ 6月 15 14:57:18 berry kernel: amdgpu 0000:06:00.0: SE 2, SH per SE 2, CU per SH 8, active_cu_number 24
+ 6月 15 14:57:19 berry kernel: amdgpu 0000:06:00.0: Runtime PM not available
+ 6月 15 14:57:19 berry kernel: [drm] Initialized amdgpu 3.64.0 for 0000:06:00.0 on minor 1
+ 6月 15 14:57:19 berry kernel: fbcon: amdgpudrmfb (fb0) is primary device
+ 6月 15 14:57:19 berry kernel: amdgpu 0000:06:00.0: [drm] fb0: amdgpudrmfb frame buffer device
+ 6月 15 14:57:56 berry kernel: amdgpu 0000:06:00.0: bo 00000000dbc08e38 va 0x0000106880-0x0000106893 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:57:56 berry kernel: amdgpu 0000:06:00.0: bo 000000000825d79e va 0x0000106880-0x000010689f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:57:56 berry kernel: amdgpu 0000:06:00.0: bo 0000000023a56784 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:57:56 berry kernel: amdgpu 0000:06:00.0: bo 00000000529d59e6 va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:57:56 berry kernel: amdgpu 0000:06:00.0: bo 000000003994e978 va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000003f08f83f va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000ea2341ed va 0x0000106880-0x000010689d conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000d8cd5784 va 0x0000106880-0x00001068a7 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000cc11ece8 va 0x0000106880-0x000010689d conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000009dbad99f va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000009dbad99f va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000009dbad99f va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000009dbad99f va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000004e2c1302 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000004e2c1302 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000009264ac6d va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000009264ac6d va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000853f5cab va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000dafc4d12 va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000cc6f9518 va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 0000000064a1f523 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000007790695e va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000001c366c2f va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000007ef90aa7 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000005527cb6e va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000683ac04c va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000004d3ded59 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000007ac36878 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000946385d9 va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 0000000061b4acf2 va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000db3d1d2f va 0x0000106880-0x000010689d conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 0000000070ed3ae8 va 0x0000106880-0x00001068a7 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000e7df0e76 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000006d632303 va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 0000000022606cf9 va 0x0000106880-0x0000106887 conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000cbfd7cfd va 0x0000106880-0x000010689d conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000683ac04c va 0x0000106880-0x000010688a conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 000000007ef90aa7 va 0x0000106880-0x000010688f conflict with 0x0000106884-0x0000106885
+ 6月 15 14:58:01 berry kernel: amdgpu 0000:06:00.0: bo 00000000440d5c48 va 0x0000106880-0x00001068b7 conflict with 0x0000106884-0x0000106885
+
+[   90.341745] amdgpu 0000:06:00.0: amdgpu: bo 00000000a2d1e1b2 va 0x0000104940-0x0000104988 conflict with 0x0000104981-0x0000104982
+[  134.545148] amdgpu 0000:06:00.0: amdgpu: ring gfx timeout, signaled seq=24168, emitted seq=24171
+[  134.545157] amdgpu 0000:06:00.0: amdgpu: Process information: process wayback-composi pid 3897 thread wayback-co:cs0 pid 3920
+[  134.545162] amdgpu 0000:06:00.0: amdgpu: GPU reset begin!
+[  135.019059] amdgpu 0000:06:00.0: amdgpu: Dumping IP State
+[  135.019065] amdgpu 0000:06:00.0: amdgpu: Dumping IP State Completed
+[  135.019067] amdgpu 0000:06:00.0: amdgpu: PCI CONFIG reset
+[  135.023154] amdgpu 0000:06:00.0: amdgpu: GPU reset succeeded, trying to resume
+[  135.023193] [drm] PCIE gen 3 link speeds already enabled
+[  135.023995] amdgpu 0000:06:00.0: amdgpu: PCIE GART of 1024M enabled (table at 0x000000F400000000).
+[  135.595465] [drm] UVD initialized successfully.
+[  135.914287] amdgpu 0000:06:00.0: amdgpu: recover vram bo from shadow start
+[  135.918910] amdgpu 0000:06:00.0: amdgpu: recover vram bo from shadow done
+[  135.919081] Xwayland: Xwayland:cs0: potentially unexpected fatal signal 6.
+[  135.919088] CPU: 17 UID: 0 PID: 3945 Comm: Xwayland:cs0 Tainted: P           O       6.11.11-berry #1
+[  135.919092] Tainted: [P]=PROPRIETARY_MODULE, [O]=OOT_MODULE
+[  135.919094] Hardware name: Apple Inc. MacPro6,1/Mac-F60DEB81FF30ACF6, BIOS 481.0.0.0.0 10/07/2023
+[  135.919096] RIP: 0033:0x7f14f7d95818
+[  135.919100] Code: 3e 36 07 00 48 8d b5 58 ff ff ff 41 ba 08 00 00 00 48 c7 85 58 ff ff ff 20 00 00 00 31 d2 bf 01 00 00 00 b8 0e 00 00 00 0f 05 <f4> bf 7f 00 00 00 e8 7d ea 0b 00 e8 65 ff ff ff 83 bd 90 fb ff ff
+[  135.919103] RSP: 002b:00007f14eaa8f600 EFLAGS: 00000246 ORIG_RAX: 000000000000000e
+[  135.919115] RAX: 0000000000000000 RBX: 00000000ffffff83 RCX: 00007f14f7d95818
+[  135.919117] RDX: 0000000000000000 RSI: 00007f14eaa8f608 RDI: 0000000000000001
+[  135.919119] RBP: 00007f14eaa8f6b0 R08: 0000000000000000 R09: 00007f14f7f84b20
+[  135.919120] R10: 0000000000000008 R11: 0000000000000246 R12: 00005645b3191630
+[  135.919122] R13: 00005645b3191630 R14: 000000000000000a R15: 00005645b31a9da0
+[  135.919124] FS:  00007f14eaa906c0 GS:  0000000000000000
+[  135.970638] amdgpu 0000:06:00.0: amdgpu: GPU reset(1) succeeded!
+
+[ 4941.455366] amdgpu 0000:06:00.0: amdgpu: GPU fault detected: 146 0x082b3014
+[ 4941.455372] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_ADDR   0x00133B41
+[ 4941.455375] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_STATUS 0x0B030014
+[ 4941.455377] amdgpu 0000:06:00.0: amdgpu: VM fault (0x14, vmid 5) at page 1260353, write from '' (0x00000000) (48)
+[ 4941.455382] amdgpu 0000:06:00.0: amdgpu: GPU fault detected: 146 0x082b3014
+[ 4941.455384] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_ADDR   0x00133B41
+[ 4941.455386] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_STATUS 0x0B030014
+[ 4941.455387] amdgpu 0000:06:00.0: amdgpu: VM fault (0x14, vmid 5) at page 1260353, write from '' (0x00000000) (48)
+[ 4941.472415] amdgpu 0000:06:00.0: amdgpu: GPU fault detected: 146 0x00e91014
+[ 4941.472421] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_ADDR   0x00133B87
+[ 4941.472424] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_STATUS 0x09010014
+[ 4941.472428] amdgpu 0000:06:00.0: amdgpu: VM fault (0x14, vmid 4) at page 1260423, write from '' (0x00000000) (16)
+[ 4941.472434] amdgpu 0000:06:00.0: amdgpu: GPU fault detected: 146 0x00692014
+[ 4941.472437] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_ADDR   0x00133B81
+[ 4941.472440] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_STATUS 0x0804000C
+[ 4941.472442] amdgpu 0000:06:00.0: amdgpu: VM fault (0x0c, vmid 4) at page 1260417, read from '' (0x00000000) (64)
+[ 4941.473698] amdgpu 0000:06:00.0: amdgpu: GPU fault detected: 146 0x0865a014
+[ 4941.473702] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_ADDR   0x00133BC3
+[ 4941.473703] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_STATUS 0x050A0014
+[ 4941.473705] amdgpu 0000:06:00.0: amdgpu: VM fault (0x14, vmid 2) at page 1260483, write from '' (0x00000000) (160)
+[ 4941.473709] amdgpu 0000:06:00.0: amdgpu: GPU fault detected: 146 0x0865a014
+[ 4941.473711] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_ADDR   0x00133BC1
+[ 4941.473713] amdgpu 0000:06:00.0: amdgpu:   VM_CONTEXT1_PROTECTION_FAULT_STATUS 0x050A0014
+[ 4941.473715] amdgpu 0000:06:00.0: amdgpu: VM fault (0x14, vmid 2) at page 1260481, write from '' (0x00000000) (160)
+
