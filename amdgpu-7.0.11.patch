@@ -1,0 +1,95 @@
+diff -Nuarp drm-7.0.11.orig/amd/amdgpu/amdgpu_device.c drm-7.0.11/amd/amdgpu/amdgpu_device.c
+--- drm-7.0.11.orig/amd/amdgpu/amdgpu_device.c	2026-06-02 00:54:55.000000000 +0900
++++ drm-7.0.11/amd/amdgpu/amdgpu_device.c	2026-06-15 12:21:39.368014389 +0900
+@@ -5959,8 +5959,17 @@ int amdgpu_device_reinit_after_reset(str
+ 					amdgpu_ttm_set_buffer_funcs_status(tmp_adev, true);
+ 
+ 				r = amdgpu_device_ip_resume_phase3(tmp_adev);
+-				if (r)
+-					goto out;
++				if (r) {
++					/* DCE (display) resume failure after GPU reset is
++					 * non-fatal on older hardware (e.g. CIK/Hawaii) where
++					 * VRAM shadow restore is unavailable.  The display may
++					 * be temporarily scrambled but the GPU rings are up.
++					 */
++					dev_warn(tmp_adev->dev,
++						 "ip_resume_phase3 (DCE) failed after GPU reset (%d), display may need re-init\n",
++						 r);
++					r = 0;
++				}
+ 
+ 				if (vram_lost)
+ 					amdgpu_device_fill_reset_magic(tmp_adev);
+diff -Nuarp drm-7.0.11.orig/amd/amdgpu/amdgpu_ids.c drm-7.0.11/amd/amdgpu/amdgpu_ids.c
+--- drm-7.0.11.orig/amd/amdgpu/amdgpu_ids.c	2026-06-02 00:54:55.000000000 +0900
++++ drm-7.0.11/amd/amdgpu/amdgpu_ids.c	2026-06-15 12:20:44.097502349 +0900
+@@ -535,6 +535,7 @@ void amdgpu_vmid_reset(struct amdgpu_dev
+ 
+ 	mutex_lock(&id_mgr->lock);
+ 	id->owner = 0;
++	id->pd_gpu_addr = 0;
+ 	id->gds_base = 0;
+ 	id->gds_size = 0;
+ 	id->gws_base = 0;
+diff -Nuarp drm-7.0.11.orig/amd/amdgpu/amdgpu_job.c drm-7.0.11/amd/amdgpu/amdgpu_job.c
+--- drm-7.0.11.orig/amd/amdgpu/amdgpu_job.c	2026-06-02 00:54:55.000000000 +0900
++++ drm-7.0.11/amd/amdgpu/amdgpu_job.c	2026-06-15 12:21:48.697589048 +0900
+@@ -113,11 +113,20 @@ static enum drm_gpu_sched_stat amdgpu_jo
+ 		amdgpu_job_core_dump(adev, job);
+ 
+ 	if (amdgpu_gpu_recovery &&
+-	    amdgpu_ring_is_reset_type_supported(ring, AMDGPU_RESET_TYPE_SOFT_RESET) &&
+-	    amdgpu_ring_soft_recovery(ring, job->vmid, s_job->s_fence->parent)) {
+-		dev_err(adev->dev, "ring %s timeout, but soft recovered\n",
+-			s_job->sched->name);
+-		goto exit;
++	    amdgpu_ring_is_reset_type_supported(ring, AMDGPU_RESET_TYPE_SOFT_RESET)) {
++		int retry;
++
++		for (retry = 0; retry < 3; retry++) {
++			if (amdgpu_ring_soft_recovery(ring, job->vmid,
++						      s_job->s_fence->parent)) {
++				dev_err(adev->dev,
++					"ring %s timeout, soft recovered (attempt %d)\n",
++					s_job->sched->name, retry + 1);
++				goto exit;
++			}
++			if (retry < 2)
++				msleep(100);
++		}
+ 	}
+ 
+ 	dev_err(adev->dev, "ring %s timeout, signaled seq=%u, emitted seq=%u\n",
+diff -Nuarp drm-7.0.11.orig/amd/amdgpu/gfx_v7_0.c drm-7.0.11/amd/amdgpu/gfx_v7_0.c
+--- drm-7.0.11.orig/amd/amdgpu/gfx_v7_0.c	2026-06-02 00:54:55.000000000 +0900
++++ drm-7.0.11/amd/amdgpu/gfx_v7_0.c	2026-06-15 12:20:33.649966200 +0900
+@@ -3994,12 +3994,28 @@ static void gfx_v7_0_ring_soft_recovery(
+ {
+ 	struct amdgpu_device *adev = ring->adev;
+ 	uint32_t value = 0;
++	u32 status;
+ 
++	/* Kill stuck wavefronts in this VMID */
+ 	value = REG_SET_FIELD(value, SQ_CMD, CMD, 0x03);
+ 	value = REG_SET_FIELD(value, SQ_CMD, MODE, 0x01);
+ 	value = REG_SET_FIELD(value, SQ_CMD, CHECK_VMID, 1);
+ 	value = REG_SET_FIELD(value, SQ_CMD, VM_ID, vmid);
+ 	WREG32(mmSQ_CMD, value);
++
++	/* If the CP itself is hung, briefly halt and restart ME/PFP/CE.
++	 * SQ_CMD only kills shader wavefronts; a hung CP needs an explicit
++	 * restart so the ring can make forward progress and signal the fence.
++	 */
++	status = RREG32(mmGRBM_STATUS);
++	if (status & (GRBM_STATUS__CP_BUSY_MASK | GRBM_STATUS__CP_COHERENCY_BUSY_MASK)) {
++		WREG32(mmCP_ME_CNTL,
++		       CP_ME_CNTL__ME_HALT_MASK |
++		       CP_ME_CNTL__PFP_HALT_MASK |
++		       CP_ME_CNTL__CE_HALT_MASK);
++		udelay(10);
++		WREG32(mmCP_ME_CNTL, 0);
++	}
+ }
+ 
+ static uint32_t wave_read_ind(struct amdgpu_device *adev, uint32_t simd, uint32_t wave, uint32_t address)
