@@ -4003,17 +4003,23 @@ static void gfx_v7_0_ring_soft_recovery(struct amdgpu_ring *ring, unsigned vmid)
 	value = REG_SET_FIELD(value, SQ_CMD, VM_ID, vmid);
 	WREG32(mmSQ_CMD, value);
 
-	/* If the CP itself is hung, briefly halt and restart ME/PFP/CE.
-	 * SQ_CMD only kills shader wavefronts; a hung CP needs an explicit
-	 * restart so the ring can make forward progress and signal the fence.
+	/* If the CP itself is hung (ME stalled = ring not draining), briefly
+	 * halt and restart ME/PFP/CE.  SQ_CMD only kills shader wavefronts;
+	 * a hung CP needs an explicit restart so the ring can make forward
+	 * progress and signal the fence.
+	 *
+	 * GFX v7 register headers do not expose a dedicated ME_BUSY bit;
+	 * CP_BUSY_MASK is the finest-grained CP-activity indicator available
+	 * here.  It can fire during normal operation, so this path is a
+	 * best-effort reset rather than a precise hung-ME detection.
 	 */
 	status = RREG32(mmGRBM_STATUS);
-	if (status & (GRBM_STATUS__CP_BUSY_MASK | GRBM_STATUS__CP_COHERENCY_BUSY_MASK)) {
+	if (status & GRBM_STATUS__CP_BUSY_MASK) {
 		WREG32(mmCP_ME_CNTL,
 		       CP_ME_CNTL__ME_HALT_MASK |
 		       CP_ME_CNTL__PFP_HALT_MASK |
 		       CP_ME_CNTL__CE_HALT_MASK);
-		udelay(10);
+		udelay(100);
 		WREG32(mmCP_ME_CNTL, 0);
 	}
 }
